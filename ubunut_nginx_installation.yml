@@ -1,0 +1,12 @@
+---
+- hosts: all
+  tasks:
+    -  name: nginx installation
+       apt: name=nginx state=latest
+    -  name: ensure nginx up and running
+       service:
+         name: nginx
+         state: started
+
+ansible-playbook -i inventory.cfg nginx.yml -b
+
