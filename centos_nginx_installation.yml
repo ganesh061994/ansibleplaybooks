@@ -1,0 +1,11 @@
+---
+- hosts:
+  tasks:
+    - name: enabling epel repo
+      yum:
+        name: epel-release
+        state: present
+    - name: Installing nginx
+      yum:
+        name: nginx
+        state: present
